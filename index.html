@@ -3,43 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McDonald's Menu</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Simple Animated Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            animation: slideDown 1s ease-out;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: #667eea;
+            margin: 30px auto;
+            border-radius: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        p {
+            color: #666;
+            font-size: 18px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                <h1>🍟 McDonald's</h1>
-                <p>Explore Our Delicious Menu</p>
-            </div>
-        </div>
-    </header>
-
-    <!-- Filter Buttons -->
-    <div class="filter-container">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="burgers">Burgers</button>
-        <button class="filter-btn" data-filter="chicken">Chicken</button>
-        <button class="filter-btn" data-filter="sides">Sides</button>
-        <button class="filter-btn" data-filter="drinks">Drinks</button>
-        <button class="filter-btn" data-filter="desserts">Desserts</button>
+    <div class="container">
+        <h1>Hello! 👋</h1>
+        <div class="box"></div>
+        <p>Welcome to my simple animated website</p>
+        <button onclick="alert('You clicked me!')">Click Me</button>
     </div>
-
-    <!-- Menu Grid -->
-    <main class="menu-container">
-        <div class="menu-grid" id="menuGrid">
-            <!-- Menu items will be inserted here by JavaScript -->
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2026 McDonald's Menu Website. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
-
